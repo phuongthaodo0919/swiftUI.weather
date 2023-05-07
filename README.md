@@ -52,3 +52,18 @@ struct AddWeatherView_Previews: PreviewProvider {
 
 ### Time functions
 * Parse TimeInterval to Date ```sunrise = Date(timeIntervalSince1970: TimeInterval(sunriseInterval))```
+* Format a Date to a string "h:mm a"
+```
+struct ContentView: View {
+    var date = Date()
+    var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a"
+        return formatter
+    }
+
+    var body: some View {
+        Text("\(dateFormatter.string(from: date))")
+    }
+}
+```
